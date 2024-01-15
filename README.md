@@ -1,7 +1,7 @@
 # nvim-config
 Current Nvim Config
 
-copy nvim file into your directory's .config dir.
+copy nvim file into your home directory's .config dir.
 
 ```cp -r nvim ~/.config/nvim```
 
