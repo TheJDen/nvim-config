@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'pyright', 'lua_ls'},
+  ensure_installed = {'tsserver', 'pyright', 'lua_ls', 'sqlls'},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -33,6 +33,10 @@ require('mason-lspconfig').setup({
         require('lspconfig').tsserver.setup({capabilities = capabilities})
     end,
 
+    sqlls = function()
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        require('lspconfig').sqlls.setup({capabilities = capabilities})
+    end,
 
   }
 })

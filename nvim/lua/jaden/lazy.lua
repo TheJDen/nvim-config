@@ -39,7 +39,28 @@ local plugins = {
 
     {
         "cpea2506/one_monokai.nvim",
-    }
+    },
+
+    { 'APZelos/blamer.nvim' },
+
+    {
+        "jackMort/ChatGPT.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("chatgpt").setup()
+        end,
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    },
+
+    {
+        "chrisgrieser/nvim-various-textobjs",
+        lazy = false,
+        opts = { useDefaultKeymaps = true }
+    },
 
 }
 local opts = {}
